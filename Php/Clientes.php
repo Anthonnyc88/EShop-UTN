@@ -1,0 +1,33 @@
+<?php
+//Se importa la clase conexion hacia la clase cliente para asi trabajar en manera simultania
+include "Conexion.php";
+
+//Se crea Clase Cliente con sus respectivos atributos publicos
+
+class Cliente{
+    public  $nombre;
+    public  $apellido_1;
+    public  $apellido_2;
+    public  $numero_Telefono;
+    public  $correo_Electronico;
+    public  $direccion;
+
+
+    //Metodo Constructor de la clase cliente
+    function __construct($nombre , $apellido_1, $apellido_2, $numero_Telefono,$correo_Electronico , $direccion){
+        $this->nombre=$nombre;
+        $this->apellido_1= $apellido_1;
+        $this->apellido_2= $apellido_2;
+        $this->numero_Telefono= $numero_Telefono;
+        $this->correo_Electronico= $correo_Electronico;
+        $this->direccion= $direccion;
+
+
+
+     }
+
+
+
+}
+
+?>
