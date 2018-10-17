@@ -27,6 +27,22 @@ class Cliente{
      }
 
 
+//Función que registra un cliente al sistema y se guardara en una base de datos
+    function registrar_Cliente(){
+        try{
+            $Conexion = Conexion();
+            $sql = "INSERT INTO clientes VALUES('$this->nombre', '$this->apellido_1', '$this->apellido_2', '$this->correo_Electronico','$this->direccion')";
+            $Conexion->query($sql);
+            echo "Nuevo Cliente Agregado!";
+        
+        }catch(Exception $error){
+            echo $error;
+
+        }
+
+     }
+
+
 
 }
 
