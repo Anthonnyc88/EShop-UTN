@@ -5,12 +5,12 @@ include "Conexion.php";
 //Se crea Clase Administrador con sus respectivos atributos publicos
 class Administrador{
     public $username;
-    public $passwoord;
+    public $cedula;
 
  //Metodo Constructor de la clase Administrador
-    function __construc($username, $passwoord){
+    function __construc($username, $cedula){
         $this->username=$username;
-        $this->passwoord=$passwoord;
+        $this->cedula=$cedula;
 
     }
 

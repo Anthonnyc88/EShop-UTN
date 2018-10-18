@@ -5,6 +5,7 @@ include "Conexion.php";
 //Se crea Clase Cliente con sus respectivos atributos publicos
 
 class Cliente{
+    public $cedula;
     public  $nombre;
     public  $apellido_1;
     public  $apellido_2;
@@ -12,11 +13,12 @@ class Cliente{
     public  $correo_Electronico;
     public  $direccion;
     public  $username;
-    public  $passwoord;
+    
 
 
     //Metodo Constructor de la clase cliente
-    function __construct($nombre , $apellido_1, $apellido_2, $numero_Telefono,$correo_Electronico , $direccion , $username,$passwoord){
+    function __construct($cedula,$nombre , $apellido_1, $apellido_2, $numero_Telefono,$correo_Electronico , $direccion , $username){
+        $this->cedula=$cedula;
         $this->nombre=$nombre;
         $this->apellido_1= $apellido_1;
         $this->apellido_2= $apellido_2;
@@ -24,8 +26,7 @@ class Cliente{
         $this->correo_Electronico= $correo_Electronico;
         $this->direccion= $direccion;
         $this->username=$username;
-        $this->passwoord=$passwoord;
-
+        
 
 
      }
@@ -34,7 +35,7 @@ class Cliente{
     function registrar_Cliente(){
         try{
             $Conexion = Conexion();
-            $sql = "INSERT INTO clientes VALUES('$this->nombre', '$this->apellido_1', '$this->apellido_2', '$this->correo_Electronico','$this->direccion' ,'$this->username','$this->passwoord')";
+            $sql = "INSERT INTO clientes VALUES('$this->cedula,$this->nombre', '$this->apellido_1', '$this->apellido_2',$this->numero_Telefono, '$this->correo_Electronico','$this->direccion' ,'$this->username')";
             $Conexion->query($sql);
             echo "Nuevo Cliente Agregado!";
         
