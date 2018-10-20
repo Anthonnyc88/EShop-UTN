@@ -1,7 +1,7 @@
 <?php
 
 //Se importa la clase conexion hacia la clase Producto para asi trabajar en manera simultania
-include "Conexion.php";
+include "php/Conexion.php";
 
 
 //Se crea Clase Cliente con sus respectivos atributos publicos
