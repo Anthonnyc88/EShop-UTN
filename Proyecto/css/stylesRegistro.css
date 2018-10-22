@@ -11,22 +11,22 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
-height: 100%;
+height: 80%;
 align-content: center;
 }
 
 .card{
-height: 370px;
+height:480px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 600px;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: rgb(16, 117, 212);
+color: rgb(209, 73, 20);
 }
 
 .social_icon span:hover{
@@ -86,5 +86,5 @@ color: white;
 }
 
 .links a{
-margin-left: 4px;
+margin-left: 8px;
 }
