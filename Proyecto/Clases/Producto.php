@@ -32,15 +32,15 @@ class Producto{
         $conexion->query($sql);
 
     }
-    //Funcion que Modifica productos hacia la base de datos de productos     
-    function modifcar_Producto(){
+    //Funcion que elimina productos hacia la base de datos de productos     
+    function eliminar_Producto(){
         $conexion=Conexion();
         $sql = "DELETE FROM productos WHERE sku = '$this->sku';";
         $conexion->query($sql);
 
     }
-    //Funcion que elimina productos hacia la base de datos de productos         
-    function eliminar_Producto($identificador){
+    //Funcion que modifica productos hacia la base de datos de productos         
+    function modificar_Producto($identificador){
         $conexion=Conexion();
         $sql = "UPDATE productos SET sku = '$this->sku', nombre = '$this->nombre', descripcion = '$this->descripcion', imagen = '$this->imagen', id_categoria = '$this->categoria', stock = '$this->stock', precio = '$this->precio' WHERE id = '$identificador';";
         $conexion->query($sql);
