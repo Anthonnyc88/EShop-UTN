@@ -4,6 +4,7 @@
 include "../Clases/Persona.php";
  if(isset($_POST)){
     $username = $_POST["username"];
+    $contrasena = $_POST["contrasena"];
     $nombre = $_POST["nombre"];
     $id = $_POST["id"];
     $apellido_1 = $_POST["apellido_1"];
@@ -11,6 +12,6 @@ include "../Clases/Persona.php";
     $telefono = $_POST["telefono"];
     $correo = $_POST["correo"];
     $direccion = $_POST["direccion"];
-    $clase = new Personas($username,$nombre,$id,$apellido_1,$apellido_2,$telefono,$correo,$direccion);
-    $clase->registrar_Persona();
+    $clase = new Personas($username,$contrasena);
+    $clase->Verificar_Persona();
 }

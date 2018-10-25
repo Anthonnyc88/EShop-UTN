@@ -1,7 +1,7 @@
 <?php
 
 //Se importa la clase conexion hacia la clase Producto para asi trabajar en manera simultania
-require "DB/Conexion.php";
+require "Conexion.php";
 
 //Se crea Clase Producto con sus respectivos atributos publicos
 class Producto{

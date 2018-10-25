@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
@@ -22,19 +22,19 @@
 						<h3>Iniciar Sesion</h3>
 					</div>
 					<div class="card-body">
-						<form>
+						<form action="../Backend/Inicio_sesion.php" method="post">
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
-								<input type="text" class="form-control" placeholder="Usuario">
+								<input type="text" name="username" id="username" class="form-control" placeholder="Usuario">
 
 							</div>
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-key"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="Contrasena">
+								<input type="text" name="correo" id="correo" class="form-control" placeholder="Correo">
 							</div>
 							<div class="row align-items-center remember">
 								<input type="checkbox">Recordar
