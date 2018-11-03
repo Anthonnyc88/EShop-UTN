@@ -11,5 +11,5 @@ $q1 = $con->query("insert into cart_product(product_id,q,cart_id) value($c[produ
 unset($_SESSION["cart"]);
 }
 }
-print "<script>alert('Venta procesada exitosamente');window.location='../products.php';</script>";
+print "<script>alert('Venta procesada exitosamente');window.location='products.php';</script>";
 ?>

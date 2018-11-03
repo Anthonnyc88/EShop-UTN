@@ -3,7 +3,7 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include "php/conection.php";
+include "conection.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -108,7 +108,7 @@ while($r=$products->fetch_object()):?>
 	<?php if($found):?>
 		<a href="cart.php" class="btn btn-info">Agregado</a>
 	<?php else:?>
-	<form class="form-inline" method="post" action="./php/addtocart.php">
+	<form class="form-inline" method="post" action="addtocart.php">
 	<input type="hidden" name="product_id" value="<?php echo $r->id; ?>">
 	  <div class="form-group">
 	    <input type="number" name="q" value="1" style="width:100px;" min="1" class="form-control" placeholder="Cantidad">

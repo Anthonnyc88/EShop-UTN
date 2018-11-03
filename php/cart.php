@@ -3,7 +3,7 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include "php/conection.php";
+include "conection.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,13 +51,13 @@ $r = $products->fetch_object();
 	$found = false;
 	foreach ($_SESSION["cart"] as $c) { if($c["product_id"]==$r->id){ $found=true; break; }}
 	?>
-		<a href="php/delfromcart.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
+		<a href="delfromcart.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
-<form class="form-horizontal" method="post" action="./php/process.php">
+<form class="form-horizontal" method="post" action="process.php">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email del cliente</label>
     <div class="col-sm-5">
