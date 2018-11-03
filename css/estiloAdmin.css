@@ -1,0 +1,16 @@
+body {
+
+background-image: url("https://images5.alphacoders.com/368/368917.jpg");
+}
+
+form {
+  width: 450px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.4);
+
+  padding: 270px 650px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+
+}

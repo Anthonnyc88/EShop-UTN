@@ -1,0 +1,94 @@
+body {
+    background: #C9D6FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*
+En esta clase se establece el estilo de la categoria que en este caso su nombre seria
+Categoria.php, aqui se le da color, que tan ancho que tan largo su fondo etc..
+*/
+form {
+    width: 1000px;
+    margin: auto;
+    background: rgba(25, 2, 2, 0.4);
+    padding: 1px 1px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 1px;
+
+}
+/*ID forms en donde seleccionara, agregara eliminara o modificar una categoria*/
+#form2 {
+    width: 700px 40px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.769);
+
+    padding: 900px 650px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+h2 {
+    color: rgba(255, 5, 5, 0.483);
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+    width: 50%;
+    margin-bottom:20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border:indigo;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    background: #111c22;
+    color: #f2f2f2;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+
+/*----------ANIMACIONES------*/
+input:hover,
+#ayuda:hover,
+.opciones li:hover {
+    background: white;
+    transition: all 0.3s linear;
+}
+
+
+/*-------- CAMBIO DE VENTANAS -------*/
+
+.ventana-sistema {
+    padding: 10px;
+    display: none;
+}
+
+.ventana-sistema:nth-child(2) {
+    display: block;
+}
