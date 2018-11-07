@@ -32,7 +32,7 @@
 						<h3>Registrarse</h3>
 					</div>
 					<div class="card-body">
-						<form action="../Backend/Validacion.php" method="post">
+						<form action="../Backend/ValidacionRegistro.php" method="post">
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -63,7 +63,7 @@
 							<div class="row align-items-center remember">
 							</div>
 							<div class="d-flex justify-content-center links">
-								Ya estas registrado?<a href="Login.html">Iniciar Sesion</a>
+								Ya estas registrado?<a href="Login.php">Iniciar Sesion</a>
 							</div>
 						</form>
 

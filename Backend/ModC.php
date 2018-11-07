@@ -1,19 +1,20 @@
 <?php
 /*En esta clase se resiven por los datos ingresados y escogidos por 
 el Administrador y se mandan a la clase Categorias a la funcion Modificar*/        
+require "../Clases/Categorias.php";
+        
         $errores = "";
-        $conexion = new PDO("mysql:host=localhost;dbname=proyecto","root","");
         //Validamos si el nombre que ingresa ya existe
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $nombre = filter_var($_POST["nombre"],FILTER_SANITIZE_STRING);
             $id_categoria = filter_var($_POST["id_categoria"],FILTER_SANITIZE_STRING);
+            $conexion = Conexion();
             $sql = "SELECT * FROM tbl_categoria WHERE nombre = :nombre or id_categoria = :id_categoria;";
             $info2 = $conexion->prepare($sql); 
             $info2->execute(array(':nombre' => $nombre,':id_categoria' => $id_categoria));
             $info = $info2->fetch();
             if($info === false){
             //Una vez validado verificamos si los campos estan llenos
-            require "../Clases/Categorias.php";
             $id = $_POST["id"];
             $nombre=$_POST["nombre"];
             $id_categoria = $_POST["id_categoria"];
@@ -25,7 +26,7 @@ el Administrador y se mandan a la clase Categorias a la funcion Modificar*/
             $clase->modificar_Categoria();
             }
         }else{
-            echo"<script type=\"text/javascript\">alert('Ya existe este nombre o id ingresados'); window.location='../Vista/Categoria.php';</script>";
+            echo"<script type=\"text/javascript\">alert('Ya existe este nombre o di, vuelva a ingresar otro.'); window.location='../Vista/Categoria.php';</script>";
         }
         }
         ?>

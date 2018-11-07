@@ -18,7 +18,7 @@
           <ul class="nav navbar-nav">
               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrador<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Cerrar Sesion</a></li>
+                  <li><a href="login.php">Cerrar Sesion</a></li>
                 </ul>
       </div>
       <ul class="nav navbar-nav">

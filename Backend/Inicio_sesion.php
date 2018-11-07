@@ -11,19 +11,24 @@
         $info = $info2->fetch();
         
         if($username=="" or $correo==""){
-            echo"<script type=\"text/javascript\">alert('Llenar todos los espacios'); window.location='../Vista/login.html';</script>";
+            echo"<script type=\"text/javascript\">alert('Llenar todos los espacios'); window.location='../Vista/login.php';</script>";
 
         }else{
            
                 if($info === false){
                     $errores .= "<li>El Usuario no existe o la información es Incorrecta!</li>";
-                    echo"<script type=\"text/javascript\">alert('El Usuario no existe o la información es Incorrecta'); window.location='../Vista/login.html';</script>";
+                    echo"<script type=\"text/javascript\">alert('El Usuario no existe o la información es Incorrecta'); window.location='../Vista/login.php';</script>";
             }else{
-                echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../Vista/Admin.html';</script>";
+                if($username=="Admin"){
+                    echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../Vista/Admin.php';</script>";
+                    //header("../Vista/Admin.html");
+                }
+               // header("../php/index.php");
+                echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../php/index.php';</script>";
 
             }
 
         }
     }
-
+    
 ?>
