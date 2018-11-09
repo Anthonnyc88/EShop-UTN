@@ -22,13 +22,14 @@ include "conection.php";
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$products = $con->query("select * from product");
+$products = $con->query("select * from productos");
 if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 ?>
 <table class="table table-bordered">
 <thead>
 	<th>Cantidad</th>
-	<th>Producto</th>
+	<th>Nombre</th>
+	<th>Imagen</th>
 	<th>Precio Unitario</th>
 	<th>Total</th>
 	<th></th>
@@ -38,14 +39,22 @@ if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 * Apartir de aqui hacemos el recorrido de los productos obtenidos y los reflejamos en una tabla.
 */
 foreach($_SESSION["cart"] as $c):
-$products = $con->query("select * from product where id=$c[product_id]");
+$products = $con->query("select * from tbl_productos where id=$c[product_id]");
+
+$disminuir=$con->query("update productos set stock = stock - ".$c."
+where id = ".$id_producto);
+ 
+
+ 
 $r = $products->fetch_object();
 	?>
 <tr>
 <th><?php echo $c["q"];?></th>
-	<td><?php echo $r->name;?></td>
-	<td>$ <?php echo $r->price; ?></td>
-	<td>$ <?php echo $c["q"]*$r->price; ?></td>
+	<td><?php echo $r->nombre;?></td>
+	<td> <img src="<?php echo $r->imagen; ?>" width="200px"/></td>
+	<td>$ <?php echo $r->precio; ?></td>
+	
+	<td>$ <?php echo $c["q"]*$r->precio; ?></td>
 	<td style="width:260px;">
 	<?php
 	$found = false;
@@ -67,6 +76,7 @@ $r = $products->fetch_object();
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">Procesar Venta</button>
+
     </div>
   </div>
 </form>

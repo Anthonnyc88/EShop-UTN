@@ -4,6 +4,7 @@
 */
 session_start();
 include "conection.php";
+require "../Clases/Categorias.php";
 ?>
 <!DOCTYPE html>
 <html>

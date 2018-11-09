@@ -16,7 +16,7 @@ if(!empty($_SESSION["cart"])){
 		$_SESSION["cart"] = $newcart;
 	}
 }
-print "<script>window.location='../cart.php';</script>";
+print "<script>window.location='./cart.php';</script>";
 
 ?>
 

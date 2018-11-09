@@ -29,7 +29,7 @@ if(!empty($_POST)){
 				$_SESSION["cart"] = $cart;
 			}
 		}
-		print "<script>window.location='../products.php';</script>";
+		print "<script>window.location='./products.php';</script>";
 	}
 }
 
