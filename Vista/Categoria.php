@@ -25,9 +25,10 @@ $cat = new Categoria("nombre","id_categoria","id");
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Admin.html">Volver</a></li>
+                            <li><a href="Admin.php">Volver</a></li>
                         </ul>
                     </li>
+                    <li><a id="Mostrar" href="#">Mostrar Categorias</a></li>
                     <li><a id="Agregar" href="#">Agregar Categorias</a></li>
                     <li><a id="Modificar" href="#">Modificar Categorias</a></li>
                     <li><a id="Eliminar" href="#">Eliminar Categorias</a></li>
@@ -73,18 +74,19 @@ $cat = new Categoria("nombre","id_categoria","id");
                         <form action="#"></form>
             </div>
         </div>
-        <!-- Listar --->
-        <div class="ventana-sistema" id="VListar">
+        <!-- Mostrar --->
+        <div class="ventana-sistema" id="VMostrar">
             <div class="content w3-animate-zoom">
-                <form action="">
-                    <h2>Listar Categorias</h2>
-                    <center><select id="SelectOpt" name="SelectOption" id="">Categorias
-                            <option value="Richar ID:10009">Prueva</option>
-                            <center><button id="boton">Listar</button></center>
-                            <form action="#">
+                <form action="" id="3f" method="post">
+                    <h2>Mostrar Categorias</h2>
+                    <center><td name="id"> <?php 
+                       echo $cat->mostrar();
+                    ?></td>
+                    <center><button id="boton" type="submit">Eliminar</button></center>
+                        <form action="#"></form>
             </div>
         </div>
-    </div>
+        
 
     <script src="../js/scriptCrud.js"></script>
 </body>

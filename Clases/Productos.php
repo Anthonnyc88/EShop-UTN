@@ -11,10 +11,12 @@ class Productos{
     public $stock;
     public $precio;
     public $id;
+    public $nom_categoria;
+
 
 
     //Metodo Constructor de la clase productos
-    function __construct($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id){
+    function __construct($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id,$nom_categoria){
         $this->sku= $sku;
         $this->nombre=$nombre;
         $this->descripcion=$descripcion;
@@ -22,13 +24,15 @@ class Productos{
         $this->stock= $stock;
         $this->precio= $precio;
         $this->id= $id;
+        $this->nom_categoria= $nom_categoria;
+
 
     }
 
     //Función que registra una productos al sistema y se guardara en una base de datos
     function registrar_Productos(){
         $conexion = Conexion();
-        $sql = "INSERT INTO tbl_productos(sku,nombre,descripcion,imagen,stock,precio,id)VALUES('$this->sku','$this->nombre','$this->descripcion','$this->imagen','$this->stock','$this->precio','$this->id')";
+        $sql = "INSERT INTO tbl_productos(sku,nombre,descripcion,imagen,stock,precio,id,nom_categoria)VALUES('$this->sku','$this->nombre','$this->descripcion','$this->imagen','$this->stock','$this->precio','$this->id','$this->nom_categoria')";
         $conexion->query($sql);
        echo"<script type=\"text/javascript\">alert('Registro Exitoso'); window.location='../Vista/Productos.php';</script>";
     }  
@@ -45,7 +49,7 @@ class Productos{
     //Se crea una tercera varible que se utiliza tanto para  verficar, modificar, y eliminar la infomacion que se encuentre en la base de datos         
     function modificar_Productos(){
         $conexion = Conexion();
-        $sql = "UPDATE tbl_productos SET sku = '$this->sku', nombre = '$this->nombre', descripcion = '$this->descripcion', imagen = '$this->imagen', stock = '$this->stock', precio = '$this->precio' WHERE sku = '$this->sku';";
+        $sql = "UPDATE tbl_productos SET sku = '$this->sku', nombre = '$this->nombre', descripcion = '$this->descripcion', imagen = '$this->imagen', stock = '$this->stock', precio = '$this->precio',nom_categoria = '$this->nom_categoria' WHERE sku = '$this->sku';";
         $conexion->query($sql);
         echo"<script type=\"text/javascript\">alert('producto modificado'); window.location='../Vista/Productos.php'; </script>";
         //header("Location=../Vista/Productos.php?signup=char");
@@ -59,8 +63,14 @@ class Productos{
                echo "<option value='{$row ['sku']}'>{$row ['nombre']}</option>";      
             }
         }
-    }
-
-
+    
+        public function mostrar_categorias(){
+            $conexion = Conexion();
+            $sql="SELECT * from tbl_categoria";       
+                foreach ($conexion->query($sql) as $row){
+                   echo "<option value='{$row ['nombre']}'>{$row ['nombre']}</option>";      
+                }
+            }
+        }
 
 ?>

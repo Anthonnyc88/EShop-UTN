@@ -8,29 +8,38 @@ en donde se agrega modifica o se elimina.
 var ventanaAgregar = document.getElementById("VAgregar");
 var ventanaModificar = document.getElementById("VModificar");
 var ventanaEliminar = document.getElementById("VEliminar");
+var ventanaMostrar = document.getElementById("VMostrar");
+
 
 //esta funcion pone visible al que seleccione y oculta los que no se han seleccionado
 function Agregar() {
     ventanaAgregar.style.display = 'block'
     ventanaModificar.style.display = 'none';
     ventanaEliminar.style.display = 'none';
+    ventanaMostrar.style.display = 'none';
+
 
 }
 //esta funcion pone visible al que seleccione y oculta los que no se han seleccionado
 function Modificar() {
     ventanaModificar.style.display = 'block'
+    ventanaMostrar.style.display = 'none';
     ventanaEliminar.style.display = 'none';
     ventanaAgregar.style.display = 'none';
-
 }
 //esta funcion pone visible al que seleccione y oculta los que no se han seleccionado
 function Eliminar() {
     ventanaEliminar.style.display = 'block'
+    ventanaMostrar.style.display = 'none';
     ventanaAgregar.style.display = 'none';
     ventanaModificar.style.display = 'none';
-
 }
-
+function Mostrar() {
+    ventanaMostrar.style.display = 'block'
+    ventanaAgregar.style.display = 'none';
+    ventanaModificar.style.display = 'none';
+    ventanaEliminar.style.display = 'none';
+}
 //Ah esto se le podria poner un mouesclick o click en este caso es un click 
 //cada boton del crud se le establecera la funcion que le corresponde en este caso
 //A la funcion agregar 
@@ -44,4 +53,7 @@ $('#Modificar').click(function () {
 })
 $('#Eliminar').click(function () {
     Eliminar();
+})
+$('#Mostrar').click(function () {
+    Mostrar();
 })

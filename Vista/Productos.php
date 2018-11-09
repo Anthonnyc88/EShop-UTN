@@ -24,7 +24,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Admin.html">Volver</a></li>
+                            <li><a href="Admin.php">Volver</a></li>
                         </ul>
                     </li>
                     <li><a id="Agregar" href="#">Agregar Productos</a></li>
@@ -47,6 +47,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                         <center><input type="text" id="categoria" name="categoria" placeholder="Categoria producto"><br>
                         <center><input type="text" id="stock" name="stock" placeholder="Stock producto"><br>
                         <center><input type="text" id="precio" name="precio" placeholder="Precio producto"><br>
+                        <center><select name="nom_categoria" id="nom_categoria" ><?php echo $cat->mostrar_categorias();?></select>
                             <center><button id="boton" name="guardar"type="submit">Agregar</button>
                 </form>
             </div>
@@ -63,6 +64,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                         <center><input type="file" id="imagen" name="imagen" placeholder="Image producto"><br>
                         <center><input type="text" id="stock" name="stock" placeholder="Stock producto"><br>
                         <center><input type="text" id="precio" name="precio" placeholder="Precio producto"><br>
+                        <center><select name="nom_categoria" id="name_categoria" ><?php echo $cat->mostrar_categorias();?></select>
                         <center><button name="modificar" id="modificar" type="submit">Modificar</button></center>
                 </form>
             </div>
@@ -79,6 +81,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                         <form action="#"></form>
             </div>
         </div>
+        
        
     </div>
     <script src="../js/scriptCrud.js"></script>

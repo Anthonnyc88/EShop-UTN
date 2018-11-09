@@ -25,11 +25,12 @@ include "../Vista/Productos.php";
             $stock= $_POST["stock"];
             $precio= $_POST["precio"];
             $id= "0";
+            $nom_categoria= $_POST["nom_categoria"];
             //Validamos si algun campo  quedo basido a la hora de ingresar datos
-            if($nombre=="" or $sku=="" or $descripcion=="" or $imagen=="" or $stock=="" or $precio=="" or $id==""){
+            if($nombre=="" or $sku=="" or $descripcion=="" or $imagen=="" or $stock=="" or $precio=="" or $id==""or $nom_categoria==""){
                 //echo"<script type=\"text/javascript\">alert('Llenar todos los campos'); window.location='../Vista/Productos.php';</script>";
             }else{
-                $clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id);
+                $clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id,$nom_categoria);
                 $clase->registrar_Productos();
             }
         }else{

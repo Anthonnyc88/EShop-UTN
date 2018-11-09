@@ -47,6 +47,15 @@ class Categoria{
                echo "<option value='{$row ['id_categoria']}'>{$row ['nombre']}</option>";      
             }
         }
+        public function mostrar(){
+            $conexion = Conexion();
+            $sql="SELECT * from tbl_categoria";       
+                foreach ($conexion->query($sql) as $row){
+                   echo "<option value='{$row ['id_categoria']}'>{$row ['nombre']}</option>";
+                   echo "<option value='{$row ['id_categoria']}'>{$row ['id_categoria']}</option>";      
+      
+                }
+            }
     }
 
 

@@ -27,8 +27,9 @@ include "../Vista/Productos.php";
             $stock= $_POST["stock"];
             $precio= $_POST["precio"];         
             $id="0";
+            $nom_categoria=$_POST["nom_categoria"];;
             //Finalmente le mandamos los datos a la funcion
-            $clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id);
+            $clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id,$nom_categoria);
             $clase->modificar_Productos();
             }
         }else{
