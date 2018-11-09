@@ -45,7 +45,7 @@
 					</div>
 					<div class="card-footer">
 						<div class="d-flex justify-content-center links">
-							No tienes una cuenta?<a href="Registrarse.html">Registrar</a>
+							No tienes una cuenta?<a href="Registrarse.php">Registrar</a>
 						</div>
 						<div class="d-flex justify-content-center">
 

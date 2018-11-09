@@ -82,13 +82,16 @@ include "conection.php";
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$products = $con->query("select * from product");
+$products = $con->query("select * from tbl_productos");
 ?>
 
 <table class="table table-bordered">
 <thead>
+    <th>SKU</th>
 	<th>Producto</th>
 	<th>Precio</th>
+	<th>Descripcion</th>
+	<th>Imagen</th>
 	<th></th>
 </thead>
 <?php 
@@ -97,8 +100,14 @@ $products = $con->query("select * from product");
 */
 while($r=$products->fetch_object()):?>
 <tr>
-	<td><?php echo $r->name;?></td>
-	<td>$ <?php echo $r->price; ?></td>
+	<td><?php echo $r->sku;?></td>
+	<td> <?php echo $r->nombre; ?></td>
+	<td>$ <?php echo $r->precio; ?></td>
+	<td> <?php echo $r->descripcion; ?></td>
+	<td> <img src="<?php echo $r->imagen; ?>" width="200px"/></td>
+
+
+
 	<td style="width:260px;">
 	<?php
 	$found = false;

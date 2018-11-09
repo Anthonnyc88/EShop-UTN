@@ -1,5 +1,5 @@
 <?php
 
-$con  = new mysqli("localhost","root","","cartbasic1");
+$con  = new mysqli("localhost","root","","proyecto");
 
 ?>
