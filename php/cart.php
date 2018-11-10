@@ -41,8 +41,8 @@ if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 foreach($_SESSION["cart"] as $c):
 $products = $con->query("select * from tbl_productos where id=$c[product_id]");
 
-$disminuir=$con->query("update productos set stock = stock - ".$c."
-where id = ".$id_producto);
+//$disminuir=$con->query("update productos set stock = stock - ".$c."
+//where id = ".$id_producto);
  
 
  
