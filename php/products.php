@@ -5,6 +5,8 @@
 session_start();
 include "conection.php";
 require "../Clases/Categorias.php";
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +37,7 @@ require "../Clases/Categorias.php";
 			<ul class="nav navbar-nav">
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Producto</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Categorias</a></li>
+				<li><a href="../Backend/Cerrar.php"><span class= " glyphicon glyphicon-modal-window"></span>Cerrar Sesión</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

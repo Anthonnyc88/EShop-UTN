@@ -31,8 +31,8 @@
             <li><a href="#">Monto total de venta</a></li>
           </ul>
         </li>
-        <li><a href="Categoria.php">Administrar Categorias</a></li>
-        <li><a href="Productos.php">Administrar Productos</a></li>
+        <li><a href="../Vista/Categoria.php">Administrar Categorias</a></li>
+        <li><a href="../Vista/Productos.php">Administrar Productos</a></li>
       </ul>
     </div>
   </nav>

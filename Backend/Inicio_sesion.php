@@ -1,5 +1,6 @@
 <?php
     require "../Backend/Conexion.php";
+    session_start();
     $errores = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = filter_var($_POST["username"],FILTER_SANITIZE_STRING);
@@ -19,13 +20,19 @@
                     $errores .= "<li>El Usuario no existe o la información es Incorrecta!</li>";
                     echo"<script type=\"text/javascript\">alert('El Usuario no existe o la información es Incorrecta'); window.location='../Vista/login.php';</script>";
             }else{
-                if($username=="Admin"){
-                    echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../Vista/Admin.php';</script>";
-                    //header("../Vista/Admin.html");
-                }
+                if($username=="Admin"  && $correo=="Admin@gmail.com"){
+                    $_SESSION["usu"] = $correo;
+                    //echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../Backend/seccion_Administrador.php';</script>";
+                    header("Location:../Backend/seccion_Administrador.php");
+                }else{
                // header("../php/index.php");
-                echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../php/index.php';</script>";
+               $_SESSION["usu"] = $email;
+                //echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../php/index.php';</script>";
+                header("Location:../php/index.php")    ;
+            
 
+                }
+            
             }
 
         }
