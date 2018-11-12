@@ -11,8 +11,9 @@ if($cart->total_items() <= 0){
     header("Location: index.php");
 }
 
+
 // set customer ID in session
-$_SESSION['sessCustomerID'] = 1;
+$_SESSION['sessCustomerID'] = 6;
 
 // get customer details by session customer ID
 $query = $db->query("SELECT * FROM personas WHERE id = ".$_SESSION['sessCustomerID']);
@@ -21,7 +22,7 @@ $custRow = $query->fetch_assoc();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pagos - PHP Carrito de compras Tutorial</title>
+    <title>Pagos -Carrito de compras </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
