@@ -24,6 +24,7 @@ include 'Configuracion.php';
   <li role="presentation" class="active"><a href="index.php">Inicio</a></li>
   <li role="presentation"><a href="VerCarta.php">Ver Carta</a></li>
   <li role="presentation"><a href="Pagos.php">Pagos</a></li>
+  <li role="presentation"><a href="../Backend/Cerrar.php">Cerrar Seccion</a></li>
 </ul>
 </div>
 
