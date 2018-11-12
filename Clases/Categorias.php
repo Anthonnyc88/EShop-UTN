@@ -39,6 +39,20 @@ class Categoria{
         $conexion->query($sql);
         echo"<script type=\"text/javascript\">alert('Modificacion Exitosa'); window.location='../Vista/Categoria.php';</script>";
     }
+    //Modificar solo el ID de la categoria
+    function modificar_IDCategoria(){
+        $conexion = Conexion();
+        $sql = "UPDATE tbl_categoria SET id_categoria = '$this->id_categoria' WHERE id_categoria = '$this->id';";
+        $conexion->query($sql);
+        echo"<script type=\"text/javascript\">alert('Modificacion Exitosa'); window.location='../Vista/Categoria.php';</script>";
+    }
+    //Modificar solamente el nombre de la categoria
+    function modificar_NombreCategoria(){
+        $conexion = Conexion();
+        $sql = "UPDATE tbl_categoria SET nombre = '$this->nombre' WHERE id_categoria = '$this->id';";
+        $conexion->query($sql);
+        echo"<script type=\"text/javascript\">alert('Modificacion Exitosa'); window.location='../Vista/Categoria.php';</script>";
+    }
     //Funcion que muestra los datos en donde se seleccione 
     public function mostrar_categorias(){
         $conexion = Conexion();
@@ -47,17 +61,18 @@ class Categoria{
                echo "<option value='{$row ['id_categoria']}'>{$row ['nombre']}</option>";      
             }
         }
-        public function mostrar(){
-            $conexion = Conexion();
-            $sql="SELECT * from tbl_categoria";       
-                foreach ($conexion->query($sql) as $row){
-                   echo "<option value='{$row ['id_categoria']}'>{$row ['nombre']}</option>";
-                   echo "<option value='{$row ['id_categoria']}'>{$row ['id_categoria']}</option>";      
-      
-                }
+    //Funcion que solo muestra el ID de la categoria que este seleccionando en el combobox
+    public function mostrarID(){
+        $conexion = Conexion();
+        $sql="SELECT * from tbl_categoria";       
+            foreach ($conexion->query($sql) as $row){
+            echo "<option value='{$row ['id_categoria']}'>{$row ['id_categoria']}</option>";
             }
-    }
+        }
 
+
+            
+    }
 
 
 ?>

@@ -11,9 +11,9 @@ class Personas{
     public  $telefono;
     public  $correo;
     public  $direccion;
-    public  $usu;
+    public  $use;
     //Metodo Constructor de la clase cliente
-    function __construct($username,$nombre ,$id, $apellido_1, $apellido_2, $telefono,$correo , $direccion,$usu){
+    function __construct($username,$nombre ,$id, $apellido_1, $apellido_2, $telefono,$correo , $direccion,$use){
         $this->username=$username;
         $this->nombre=$nombre;
         $this->id=$id;
@@ -22,12 +22,12 @@ class Personas{
         $this->telefono= $telefono;
         $this->correo= $correo;
         $this->direccion= $direccion;
-        $this->usu=$usu;
+        $this->use= $use;
     }
      //Función que registra una Persona al sistema y se guardara en una base de datos
      function registrar_Persona(){
             $conexion = Conexion();
-            $sql = "INSERT INTO personas(username,nombre,id,apellido_1,apellido_2,telefono,correo,direccion,usu) VALUES('$this->username','$this->nombre','$this->id','$this->apellido_1','$this->apellido_2','$this->telefono','$this->correo','$this->direccion' ,'$this->usu')";
+            $sql = "INSERT INTO personas(username,nombre,id,apellido_1,apellido_2,telefono,correo,direccion) VALUES('$this->username','$this->nombre','$this->id','$this->apellido_1','$this->apellido_2','$this->telefono','$this->correo','$this->direccion')";
             $conexion->query($sql);
             //echo"<script  language='javascript'>window.location='index.php'</script>";  
             echo"<script type=\"text/javascript\">alert('Registro exitoso'); window.location=' ../Vista/Login.php';</script>";

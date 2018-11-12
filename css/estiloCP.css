@@ -24,13 +24,21 @@ form {
 #form2 {
     width: 700px 40px;
     margin: auto;
-
     padding: 900px 650px;
     box-sizing: border-box;
     margin-top: 20px;
     border-radius: 7px;
 }
+#table{
+    width: 1000px;
+    margin: auto;
+    background: rgba(25, 2, 2, 0.4);
+    padding: 1px 1px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 1px;
 
+}
 h2 {
     color: rgba(255, 5, 5, 0.483);
     text-align: center;

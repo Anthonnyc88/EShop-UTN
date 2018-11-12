@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../css/estiloAdmin.css">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body>
@@ -31,16 +29,10 @@
             <li><a href="#">Monto total de venta</a></li>
           </ul>
         </li>
-        <li><a href="../Vista/Categoria.php">Administrar Categorias</a></li>
-        <li><a href="../Vista/Productos.php">Administrar Productos</a></li>
+        <li><a href="Categoria.php">Administrar Categorias</a></li>
+        <li><a href="Productos.php">Administrar Productos</a></li>
       </ul>
     </div>
   </nav>
-  <form action="">
-  </form>
-
-
-
-
 </body>
 </html>

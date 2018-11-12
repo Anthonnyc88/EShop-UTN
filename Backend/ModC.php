@@ -2,7 +2,7 @@
 /*En esta clase se resiven por los datos ingresados y escogidos por 
 el Administrador y se mandan a la clase Categorias a la funcion Modificar*/        
 require "../Clases/Categorias.php";
-        
+
         $errores = "";
         //Validamos si el nombre que ingresa ya existe
         if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -15,12 +15,21 @@ require "../Clases/Categorias.php";
             $info = $info2->fetch();
             if($info === false){
             //Una vez validado verificamos si los campos estan llenos
-            $id = $_POST["id"];
+            $id=$_POST["id"];
             $nombre=$_POST["nombre"];
             $id_categoria = $_POST["id_categoria"];
-            if($nombre=="" or $id_categoria==""){
-            echo"<script type=\"text/javascript\">alert('Llenar todos los campos'); window.location='../Vista/Categoria.php';</script>";
-                }else{
+            if($id_categoria=="" and $nombre==""){
+                echo"<script type=\"text/javascript\">alert('Llenar almenos 1 campo a la hora de modificar.'); window.location='../Vista/Categoria.php';</script>";
+                //Echo "Modificaremos Nombre";
+            }else if($nombre==""){
+            $clase = new Categoria($nombre,$id_categoria,$id);
+            $clase->modificar_IDCategoria();
+            //echo "Modificaremos ID";
+            }else if($id_categoria==""){
+            $clase = new Categoria($nombre,$id_categoria,$id);
+            $clase->modificar_NombreCategoria();
+            //Echo "Modificaremos Nombre";
+            }else{
             //Finalmente le mandamos los datos a la funcion
             $clase = new Categoria($nombre,$id_categoria,$id);
             $clase->modificar_Categoria();

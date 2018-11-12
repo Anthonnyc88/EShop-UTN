@@ -14,6 +14,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Productos </title>
 </head>
+
 <body>
     <!-- Este form contiene los botones que haran que aparescan los otros forms desplegables, tiene un id asignado ya que con ese 
     id se desplegaran el form que se seleccione-->
@@ -27,6 +28,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                             <li><a href="Admin.php">Volver</a></li>
                         </ul>
                     </li>
+                    <li><a id="Listar" href="#">Mostrar Productos</a></li>
                     <li><a id="Agregar" href="#">Agregar Productos</a></li>
                     <li><a id="Modificar" href="#">Modificar Productos</a></li>
                     <li><a id="Eliminar" href="#">Eliminar Productos</a></li>
@@ -43,8 +45,8 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                         <center><input type="text" id="sku" name="sku" placeholder="Sku producto"><br>
                         <center><input type="text" id="nombre" name="nombre" placeholder="Nombre producto"><br>
                         <center><input type="text" id="descripcion" name="descripcion" placeholder="Descripcion producto"><br>
+                        <img src="mi_archivo.png" alt="">
                         <center><input type="file" id="imagen" name="imagen" placeholder="Image producto"><br>
-                        <center><input type="text" id="categoria" name="categoria" placeholder="Categoria producto"><br>
                         <center><input type="text" id="stock" name="stock" placeholder="Stock producto"><br>
                         <center><input type="text" id="precio" name="precio" placeholder="Precio producto"><br>
                         <center><select name="nom_categoria" id="nom_categoria" ><?php echo $cat->mostrar_categorias();?></select>
@@ -79,11 +81,44 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                     ?></select>
                     <center><button id="boton" type="submit">Eliminar</button></center>
                         <form action="#"></form>
+                        </form>
             </div>
         </div>
+        <!-- Mostrar --->
+        <div class="ventana-sistema" id="VListar">
+        <div class="content w3-animate-zoom">
+        <form action="container" id="table">
+        <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sku</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td> <?php echo $cat->mostrar_Nombre();?></td>
+      <td> <?php echo $cat->mostrar_Sku();?></td>
+      <td> <?php echo $cat->mostrar_Descripcion();?></td>
+      <td> <?php echo $cat->mostrar_Stock();?></td>
+      <td> <?php echo $cat->mostrar_Precio();?></td>
+      <td> <?php echo $cat->mostrar_nom_cat();?></td>
+      <td> <?php ?></td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+        </div>
+        </form>
         
        
-    </div>
+
     <script src="../js/scriptCrud.js"></script>
 </body>
 
