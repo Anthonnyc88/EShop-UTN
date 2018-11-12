@@ -1,10 +1,11 @@
 <?php
 include 'Configuracion.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>PHP Shopping Cart Tutorial</title>
+    <title>Inicio</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -25,6 +26,8 @@ include 'Configuracion.php';
   <li role="presentation"><a href="VerCarta.php">Ver Carta</a></li>
   <li role="presentation"><a href="Pagos.php">Pagos</a></li>
   <li role="presentation"><a href="../Backend/Cerrar.php">Cerrar Seccion</a></li>
+  <li><a href="">Bienvenido <strong><?php echo $_SESSION['user'];?></strong> </a></li>
+ 
 </ul>
 </div>
 
