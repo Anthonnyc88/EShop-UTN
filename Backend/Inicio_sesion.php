@@ -28,7 +28,7 @@
                // header("../php/index.php");
                $_SESSION["usu"] = $email;
                 //echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../php/index.php';</script>";
-                header("Location:../php/index.php")    ;
+                header("Location:../Cliente/index.php");
             
 
                 }
