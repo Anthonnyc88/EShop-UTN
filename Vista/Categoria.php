@@ -28,7 +28,7 @@ $cat = new Categoria("nombre","id_categoria","id");
                             <li><a href="Admin.php">Volver</a></li>
                         </ul>
                     </li>
-                    <li><a id="Mostrar" href="#">Mostrar Categorias</a></li>
+                    <li><a id="Listar" href="#">Mostrar Categorias</a></li>
                     <li><a id="Agregar" href="#">Agregar Categorias</a></li>
                     <li><a id="Modificar" href="#">Modificar Categorias</a></li>
                     <li><a id="Eliminar" href="#">Eliminar Categorias</a></li>
@@ -53,11 +53,11 @@ $cat = new Categoria("nombre","id_categoria","id");
             <div class="content w3-animate-zoom">
                 <form action="../Backend/ModC.php" id="2f" method="post">
                     <h2>Modificar Categoria</h2>
-                    <center><select name="id" > <?php 
+                    <center><select name="id"> <?php 
                        echo $cat->mostrar_categorias();
                     ?></select>
-                    <center><input type="text" name="nombre" placeholder="Nombre Categoria"><br></center>
-                    <center><input type="text" name="id_categoria" placeholder="Ingresar un nuevo ID"><br></center>
+                    <center><input type="text" id="nombre" name="nombre" placeholder="Nombre Categoria"><br>
+                    <center><input type="text" id="id_categoria" name="id_categoria" placeholder="ID Categoria"><br>
                     <center><button id="boton" type="submit">Modificar</button></center>
                 </form>
             </div>
@@ -71,21 +71,36 @@ $cat = new Categoria("nombre","id_categoria","id");
                        echo $cat->mostrar_categorias();
                     ?></select>
                     <center><button id="boton" type="submit">Eliminar</button></center>
-                        <form action="#"></form>
+                </form>
             </div>
         </div>
         <!-- Mostrar --->
-        <div class="ventana-sistema" id="VMostrar">
-            <div class="content w3-animate-zoom">
-                <form action="" id="3f" method="post">
-                    <h2>Mostrar Categorias</h2>
-                    <center><td name="id"> <?php 
-                       echo $cat->mostrar();
-                    ?></td>
-                    <center><button id="boton" type="submit">Eliminar</button></center>
-                        <form action="#"></form>
-            </div>
+        <div class="ventana-sistema" id="VListar">
+        <div class="content w3-animate-zoom">
+        <form action="container" id="table">
+        <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Id Categoria</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td> <?php echo $cat->mostrar_categorias();?></td>
+      <td> <?php echo $cat->mostrarID();?></td>
+      <td></td>
+    </tr>
+    <tr>
+
+    
+  </tbody>
+</table>
         </div>
+        </form>
         
 
     <script src="../js/scriptCrud.js"></script>
