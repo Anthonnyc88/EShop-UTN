@@ -13,6 +13,10 @@ function cantidad_Clientes(){
 
 //Cantidad de productos vendidos
 function cantidad_Productos(){
+    $conexion = Conexion();
+    $slq=("Select count(*) from orden where id ");
+    $conexion->query($sql);
+    
 
 }
 
