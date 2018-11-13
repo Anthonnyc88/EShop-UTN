@@ -12,7 +12,7 @@ function cantidad_Clientes(){
 }
 
 //Cantidad de productos vendidos
-function cantidad_Producos(){
+function cantidad_Productos(){
 
 }
 

@@ -24,10 +24,11 @@
         $telefono = $_POST["telefono"];
         $correo = $_POST["correo"];
         $direccion = $_POST["direccion"];
+        $use="cliente";
         if($username=="" or $nombre=="" or $apellido_1=="" or $apellido_2=="" or $telefono=="" or $correo=="" or $direccion==""){
             echo"<script type=\"text/javascript\">alert('Llenar todos los campos'); window.location='../Vista/Registrarse.php';</script>";
         }else{
-            $clase = new Personas($username,$nombre,$id,$apellido_1,$apellido_2,$telefono,$correo,$direccion);
+            $clase = new Personas($username,$nombre,$id,$apellido_1,$apellido_2,$telefono,$correo,$direccion,$use);
             $clase->registrar_Persona();
         }
         }

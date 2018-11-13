@@ -1,4 +1,7 @@
-<?php
+<?php require "../Clases/Productos.php";//esto es un objeto
+$cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","precio","id");
+ ?>
+ <?php
 include 'Configuracion.php';
 session_start();
 ?>
@@ -25,9 +28,11 @@ session_start();
   <li role="presentation" class="active"><a href="index.php">Inicio</a></li>
   <li role="presentation"><a href="VerCarta.php">Ver Carta</a></li>
   <li role="presentation"><a href="Pagos.php">Pagos</a></li>
-  <li role="presentation"><a href="../Backend/Cerrar.php">Cerrar Seccion</a></li>
+  <li role="presentation"><a href="../Backend/Cerrar.php">Cerrar Sesion</a></li>
   <li><a href="">Bienvenido <strong><?php echo $_SESSION['user'];?></strong> </a></li>
- 
+  <form action="">
+    <select name="nom_categoria" id="name_categoria" ><?php echo $cat->mostrar_categorias();?></select>
+  </form>
 </ul>
 </div>
 
