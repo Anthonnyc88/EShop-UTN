@@ -25,11 +25,11 @@ session_start();
 <div class="panel-heading"> 
 
 <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="index.php">Inicio</a></li>
-  <li role="presentation"><a href="VerCarta.php">Ver Carta</a></li>
-  <li role="presentation"><a href="Pagos.php">Pagos</a></li>
+  <li role="presentation" class="active"><a href="../Cliente/index.php">Inicio</a></li>
+  <li role="presentation"><a href="../Cliente/VerCarta.php">Ver Carta</a></li>
+  <li role="presentation"><a href="../Cliente/Pagos.php">Pagos</a></li>
   <li role="presentation"><a href="../Backend/Cerrar.php">Cerrar Sesion</a></li>
-  <li><a href="">Bienvenido <strong><?php echo $_SESSION['user'];?></strong> </a></li>
+  <li><a href="">Bienvenido <strong><?php echo $_SESSION['usuario'];?></strong> </a></li>
   <form action="">
     <select name="nom_categoria" id="name_categoria" ><?php echo $cat->mostrar_categorias();?></select>
   </form>
@@ -58,7 +58,7 @@ session_start();
                             <p class="lead"><?php echo '$'.$row["precio"].' USD'; ?></p>
                         </div>
                         <div class="col-md-6">
-                            <a class="btn btn-success" href="AccionCarta.php?action=addToCart&id=<?php echo $row["id"]; ?>">Agregar a la Carrito</a>
+                            <a class="btn btn-success" href="../Cliente/AccionCarta.php?action=addToCart&id=<?php echo $row["id"]; ?>">Agregar alCarrito</a>
                         </div>
                     </div>
                 </div>

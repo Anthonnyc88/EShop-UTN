@@ -2,6 +2,7 @@
 // initializ shopping cart class
 include 'Carrito.php';
 $cart = new Cart;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +36,9 @@ $cart = new Cart;
 
 <ul class="nav nav-pills">
   <li role="presentation"><a href="index.php">Inicio</a></li>
-  <li role="presentation" class="active"><a href="VerCarta.php">Ver Carta</a></li>
+  <li role="presentation" class="active"><a href="VerCarta.php">Ver Carrito</a></li>
   <li role="presentation"><a href="Pagos.php">Pagos</a></li>
+  
 </ul>
 </div>
 
@@ -71,7 +73,7 @@ $cart = new Cart;
             </td>
         </tr>
         <?php } }else{ ?>
-        <tr><td colspan="5"><p>Tu carta esta vacia.....</p></td>
+        <tr><td colspan="5"><p>Tu carrito esta vacia.....</p></td>
         <?php } ?>
     </tbody>
     <tfoot>

@@ -12,6 +12,9 @@ if($cart->total_items() <= 0){
 }
 
 
+
+
+
 // set customer ID in session
 $_SESSION['sessCustomerID'] = 6;
 
@@ -93,7 +96,7 @@ $custRow = $query->fetch_assoc();
     </div>
     <div class="footBtn">
         <a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a>
-        <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-menu-right"></i></a>
+        <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar Compra <i class="glyphicon glyphicon-menu-right"></i></a>
     </div>
         </div>
  <div class="panel-footer">Eshop-UTN</div>

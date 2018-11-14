@@ -21,22 +21,21 @@
                     echo"<script type=\"text/javascript\">alert('El Usuario no existe o la información es Incorrecta'); window.location='../Vista/login.php';</script>";
             }else{
                 if($username=="Admin"  && $correo=="Admin@gmail.com"){
-                    $_SESSION["usu"] = $correo;
+                    $_SESSION["usuario"] = $correo;
                     //echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../Backend/seccion_Administrador.php';</script>";
-                    header("Location: ../Vista/Admin.php");
+                    header("Location: ../Backend/seccion_Administrador.php");
                 }else{
                // header("../php/index.php");
-               $_SESSION["usu"] = $email;
+               $_SESSION["usuario"] = $correo;
                 //echo"<script type=\"text/javascript\">alert('Inicio sesion exitoso'); window.location='../php/index.php';</script>";
-                header("Location:../Cliente/index.php");
+                header("Location:../Backend/seccion_Cliente.php");
             
                 }
             
             }
         }
     }
-    
-
-?>
+    require "../Vista/login.php";
     
 ?>
+    
