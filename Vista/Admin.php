@@ -1,4 +1,8 @@
+<?php 
+require "../Backend/metodos_Administrador.php";
+$cantidad = new Orden("created","id","id_persona","modified","precio_total","satus");
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +33,10 @@
                     <li class="selected"><a href="Login.php"><i class="fa fa-bullseye"></i>Cerrar Sesion</a></li>
                     <li><a href=""><i class="fa fa-tasks"></i>Clientes</a></li>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Cantidad de clientes registrados</a></li>
-                        <li><a href="#">Cantidad de productos vendidos</a></li>
-                        <li><a href="#">Monto total de venta</a></li>
+                        
                       </ul>
-                    <li><a href="../Vista/Categoria.php"><i class="fa fa-globe"></i>Categoria</a></li>
-                    <li><a href="../Vista/Productos.php"><i class="fa fa-list-ol"></i>Productos</a></li>
+                    <li><a href="Categoria.php"><i class="fa fa-globe"></i>Categoria</a></li>
+                    <li><a href="Productos.php"><i class="fa fa-list-ol"></i>Productos</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -61,38 +63,20 @@
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Ser talentoso te abre muchas puertas,
                             ser agradecido te las matiene abiertas.</h3>
                         </div>
-                        <div class="panel-body">
-                        <center>
-						<iframe width= "800" height="500" src="https://www.youtube.com/watch?v=4HO8uOp1fLA&list=PLaQihAe6OdwJMVpbZo9cv4naQcT_xJl7w"  allowfullscreen></iframe>
-				        </center></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-rss"></i>Reportes</h3>
-                        </div>
-                        <div class="panel-body feed">
-                            <section class="feed-item">
+                        <section class="feed-item">
                                 <div class="icon pull-left">
                                     <i class="fa fa-comment"></i>
                                 </div>
                                 <div class="feed-item-body">
                                     <div class="text">
-                                        <a href="#">#Clientes</a> Cantidad de clientes<a href="#"></a>.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Total =
+                                        <a href="#">#Clientes</a> Cantidad de clientes<a href="#"> Total = <td><?php echo $cantidad->cantidad_Productos();?></td> </a>
                                     </div>
                                 </div>
                             </section>
                             <section class="feed-item">
                                 <div class="feed-item-body">
                                     <div class="text">
-                                        <a href="#">#Productos</a> Cantidad de productos<a href="#"></a>.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Total =
+                                        <a href="#">#Productos</a> Cantidad de productos<a href="#"> Total =  </a>
                                     </div>
                                 </div>
                             </section>
@@ -102,15 +86,10 @@
                                 </div>
                                 <div class="feed-item-body">
                                     <div class="text">
-                                    <a href="#">#Ventas</a> Monto total de ventas<a href="#"></a>.
-                                    </div>
-                                    <div class="time pull-left">
-                                        Total = 
+                                    <a href="#">#Ventas</a> Monto total de ventas<a href="#">Total = </a>.
                                     </div>
                             </section>
-                        </div>
-                    </div>
+                        
                 </div>
-            </div>
 </body>
 </html>

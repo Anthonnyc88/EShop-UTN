@@ -174,7 +174,5 @@ class Productos{
                 echo "<option value='{$row ['nombre']}'>{$row ['nombre']}</option>";      
             }
         }
-
     }
-
 ?>
