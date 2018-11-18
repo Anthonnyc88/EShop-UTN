@@ -1,45 +1,32 @@
 <?php
 require "../Backend/Conexion.php";
-$cantidad = new Orden("created","id","id_persona","modified","precio_total","satus");
-
-class Orden{
-    public $created;
-    public $id;
-    public $id_persona;
-    public $modified;
-    public $precio_total;
-    public $status;
-    //Metodo Constructor de la clase Orden
-    function __construct($created,$id,$id_persona,$modified,$precio_total,$status){
-        $this->created= $created;
-        $this->id=$id;
-        $this->id_persona=$id_persona;
-        $this->modified= $modified;
-        $this->precio_total= $precio_total;
-        $this->status= $status;
-    }
-
-
-
 //Estas funciones nos van a servir para el area de Estadisticas del administrador
 // Consulta de la Cantidad de Clientes Registrados
-    public function cantidad_Clientes(){
-        $conexion = Conexion();
-        $sql = ("Select count(*) from personas WHERE usu='cliente'");
-        $conexion->query($sql);
-        echo $sql;
-    }
+function Cantidad_Clientes(){
+    $conexion = conexion();
+    $sql = "SELECT count(*) AS usu FROM personas WHERE usu='cliente';";
+    $info2 = $conexion->prepare($sql); 
+    $info2->execute();
+    $info = $info2->fetch();
+    echo $usuarios = $info["usu"];
+}
 
-    //Cantidad de productos vendidos
-    public function cantidad_Productos(){
-        $conexion = Conexion();
-        $slq="SELECT count('*') from orden WHERE status ";
-        $conexion->query($sql);
+    //Cantidad de productos vendidos    
+    function cantidad_Productos(){
+        $conexion = conexion();
+        $sql =  "SELECT count(*) AS id FROM orden";
+        $info2 = $conexion->prepare($sql); 
+        $info2->execute();
+        $info = $info2->fetch();
+        echo $productos = $info["id"];
     }
-
     //Monto total de ventas.
     function monto_Ventas(){
-
-    }
-}
+        $conexion = conexion();
+        $sql = "SELECT SUM('p.precio') AS total FROM ventas AS v INNER JOIN productos AS p ON p.id_producto = v.id_producto;";
+        $info2 = $conexion->prepare($sql); 
+        /*$info2->execute();
+        $info = $info2->fetch();
+        echo $productos = $info;*/
+        }
 ?>

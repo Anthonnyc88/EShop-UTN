@@ -1,7 +1,5 @@
 <?php 
 require "../Backend/metodos_Administrador.php";
-$cantidad = new Orden("created","id","id_persona","modified","precio_total","satus");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,14 +67,16 @@ $cantidad = new Orden("created","id","id_persona","modified","precio_total","sat
                                 </div>
                                 <div class="feed-item-body">
                                     <div class="text">
-                                        <a href="#">#Clientes</a> Cantidad de clientes<a href="#"> Total = <td><?php echo $cantidad->cantidad_Productos();?></td> </a>
+                                        <a href="#">#Clientes</a> Cantidad de clientes<a href="#"> Total = <td>
+                                        <?php Cantidad_Clientes(); ?></td> </a>
                                     </div>
                                 </div>
                             </section>
                             <section class="feed-item">
                                 <div class="feed-item-body">
                                     <div class="text">
-                                        <a href="#">#Productos</a> Cantidad de productos<a href="#"> Total =  </a>
+                                        <a href="#">#Productos</a> Cantidad de productos<a href="#"> Total = <td>
+                                        <?php Cantidad_Productos(); ?></td> </a>
                                     </div>
                                 </div>
                             </section>
@@ -87,6 +87,7 @@ $cantidad = new Orden("created","id","id_persona","modified","precio_total","sat
                                 <div class="feed-item-body">
                                     <div class="text">
                                     <a href="#">#Ventas</a> Monto total de ventas<a href="#">Total = </a>.
+                                    <?php monto_Ventas(); ?></td> </a>
                                     </div>
                             </section>
                         
