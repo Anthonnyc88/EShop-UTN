@@ -10,7 +10,8 @@ $imagen= $_POST["sku"];
 $stock= $_POST["sku"];
 $precio= $_POST["sku"];
 $id= $_POST["sku"];
-$clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id,$nom_categoria);
+$fk_categoria= $_POST["sku"];
+$clase = new Productos($sku,$nombre,$descripcion,$imagen,$stock,$precio,$id,$fk_categoria);
 $clase->eliminar_Productos();
 
 ?>

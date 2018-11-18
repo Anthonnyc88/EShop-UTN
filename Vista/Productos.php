@@ -98,6 +98,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
       <th scope="col">Stock</th>
       <th scope="col">Precio</th>
       <th scope="col">Categoria</th>
+
     </tr>
   </thead>
   <tbody>
@@ -116,7 +117,28 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
         </table>
         </div>
         </form>
-        
+        <form action="container" id="table">
+        <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Imagen</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+
+      <td> <?php echo $cat->mostrar_Imagen();?></td>
+
+      <td> <?php ?></td>
+      <td></td>
+    </tr>
+  </tbody>
+        </table>
+        </div>
+        </form>
        
 
     <script src="../js/scriptCrud.js"></script>
