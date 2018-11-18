@@ -133,6 +133,9 @@ class Cart {
 			}
 		}
 	}
+
+
+	
     
     /**
 	 * Save the cart array to the session
@@ -172,6 +175,24 @@ class Cart {
 		$this->save_cart();
 		return TRUE;
 	 }
+
+	 public function disminuirStock($row_identificador){
+		 for ($i = 0; $i < count($arreglo); $i++) {
+	//Consulto la cantidad en stcck dependiendo del Id que vaya el ciclo For
+	$re = mysql_query("SELECT stock FROM tbl_productos WHERE id = " . $arreglo[$i]['id'] . " AND stock >= " . $row_identificador[$i]['cantidad']) or die(mysql_error());
+	if (mysql_num_rows($re) === 0) {
+        echo "La cantidad es superior a lo que hay en la tienda";
+    } else { // actualizo la db con los datos nuevos!
+        while ($f = mysql_fetch_array($re)) {
+            //hago el calculo de cuantos van a quedar en Stock
+            $x = $f['stock'] - $row_identificador[$i]['cantidad'];
+            //Actualizo el registro stock de la BD
+            mysql_query("UPDATE tbl_productos SET stock=" . $x . " WHERE id=" . $row_identificador[$i]['id']) or die(mysql_error());
+        }
+    }
+}
+	}
+	 
      
     /**
 	 * Destroy the cart: Empties the cart and destroy the session
