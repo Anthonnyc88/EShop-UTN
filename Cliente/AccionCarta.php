@@ -29,13 +29,9 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         );
         $updateItem = $cart->update($itemData);
         echo $updateItem?'ok':'err';die;
-
-
-
     }elseif($_REQUEST['action'] == 'removeCartItem' && !empty($_REQUEST['id'])){
         $deleteItem = $cart->remove($_REQUEST['id']);
         header("Location: VerCarta.php");
-    
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
         // insert order details into database
         $insertOrder = $db->query("INSERT INTO orden (id_persona, precio_total, created, modified) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
@@ -47,12 +43,9 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
                 $sql .= "INSERT INTO orden_articulos (order_id, product_id, quantity) VALUES ('".$orderID."', '".$item['id']."', '".$item['qty']."');";
-                $variable=$item['id'];
-                //$sqll .= "UPDATE tbl_productos SET stock= stock-'$variable' WHERE id='$id'"); 
             }
             // insert order items into database
             $insertOrderItems = $db->multi_query($sql);
-            $insertDisminuye = $cart->disminuirStock($item['id']);
             
             if($insertOrderItems){
                 $cart->destroy();

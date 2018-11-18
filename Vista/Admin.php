@@ -33,8 +33,8 @@ require "../Backend/metodos_Administrador.php";
                     <ul class="dropdown-menu">
                         
                       </ul>
-                    <li><a href="../Vista/Categoria.php"><i class="fa fa-globe"></i>Categoria</a></li>
-                    <li><a href="../Vista/Productos.php"><i class="fa fa-list-ol"></i>Productos</a></li>
+                    <li><a href="Categoria.php"><i class="fa fa-globe"></i>Categoria</a></li>
+                    <li><a href="Productos.php"><i class="fa fa-list-ol"></i>Productos</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">

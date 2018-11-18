@@ -25,7 +25,7 @@ $cat = new Productos("sku","nombre","descripcion","imagen","categoria","stock","
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../Vista/Admin.php">Volver</a></li>
+                            <li><a href="Admin.php">Volver</a></li>
                         </ul>
                     </li>
                     <li><a id="Listar" href="#">Mostrar Productos</a></li>
