@@ -2,6 +2,9 @@
 session_start();
 
 include "db.php";
+
+
+//Lista las categorias agregadas desde panel de administrador
 if(isset($_POST["category"])){
 	$category_query = "SELECT * FROM tbl_categoria";
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
@@ -41,6 +44,8 @@ if(isset($_POST["getProduct"])){
 	}else{
 		$start = 0;
 	}
+
+	//Lista los productos segun la informacion agregada del panel de administrador
 	$product_query = "SELECT * FROM tbl_productos LIMIT $start,$limit";
 	$run_query = mysqli_query($con,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
@@ -71,16 +76,13 @@ if(isset($_POST["getProduct"])){
 		}
 	}
 }
+
+//Selecciona desde la opcion de categorias el id de la misma y lo enlaza al id del producto
+//Relacionada a esa categoria y muestra el producto segun seleccionado
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["id_categoria"];
 		$sql = "SELECT * FROM tbl_productos WHERE fk_categoria = '$id'";
-	}else if(isset($_POST["selectBrand"])){
-		$id = $_POST["brand_id"];
-		$sql = "SELECT * FROM products WHERE product_brand = '$id'";
-	}else {
-		$keyword = $_POST["keyword"];
-		$sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";
 	}
 	
 	$run_query = mysqli_query($con,$sql);

@@ -1,6 +1,7 @@
+
+//Metodo que carga las categorias
 $(document).ready(function(){
 	cat();
-	brand();
 	product();
 	function cat(){
 		$.ajax({
@@ -13,16 +14,7 @@ $(document).ready(function(){
 			}
 		})
 	}
-	function brand(){
-		$.ajax({
-			url	:	"action.php",
-			method:	"POST",
-			data	:	{brand:1},
-			success	:	function(data){
-				$("#get_brand").html(data);
-			}
-		})
-	}
+	//Funcion que carga los productos
 		function product(){
 		$.ajax({
 			url	:	"action.php",
@@ -33,8 +25,9 @@ $(document).ready(function(){
 			}
 		})
 	}
+	//Metodo que recibe los parametros de la categoria y el producto relacionado hacia esa categoria
 	$("body").delegate(".category","click",function(event){
-		$("#get_product").html("<h3>Loading...</h3>");
+		$("#get_product").html("<h3>Cargando Productos...</h3>");
 		event.preventDefault();
 		var cid = $(this).attr('cid');
 		
@@ -51,41 +44,8 @@ $(document).ready(function(){
 		})
 	
 	})
-	$("body").delegate(".selectBrand","click",function(event){
-		event.preventDefault();
-		$("#get_product").html("<h3>Loading...</h3>");
-		var bid = $(this).attr('bid');
-		
-			$.ajax({
-			url		:	"action.php",
-			method	:	"POST",
-			data	:	{selectBrand:1,brand_id:bid},
-			success	:	function(data){
-				$("#get_product").html(data);
-				if($("body").width() < 480){
-					$("body").scrollTop(683);
-				}
-			}
-		})
 	
-	})
-	$("#search_btn").click(function(){
-		$("#get_product").html("<h3>Loading...</h3>");
-		var keyword = $("#search").val();
-		if(keyword != ""){
-			$.ajax({
-			url		:	"action.php",
-			method	:	"POST",
-			data	:	{search:1,keyword:keyword},
-			success	:	function(data){ 
-				$("#get_product").html(data);
-				if($("body").width() < 480){
-					$("body").scrollTop(683);
-				}
-			}
-		})
-		}
-	})
+	//Funcion del boton de registro trae los datos del formulario de registro
 	$("#signup_button").click(function(event){
 		event.preventDefault();
 			$.ajax({
@@ -98,6 +58,8 @@ $(document).ready(function(){
 		})
 		
 	})
+
+	//Funcion que valida si es usuario o administrador
 	$("#login").click(function(event){
 		event.preventDefault();
 		var email = $("#email").val();
@@ -107,11 +69,14 @@ $(document).ready(function(){
 			method:	"POST",
 			data	:{userLogin:1,userEmail:email,userPassword:pass},
 			success	:function(data){
-				if(email != "admin@gmail.com"){
+				if(email != "admin@gmail.com"){ 
 					window.location.href = "profile.php";
+					//Si es diferente al admnistrador
 				}
 				else if(email == "admin@gmail.com"){
 					window.location.href = "Vista/Admin.php";
+					//Validamos para que solo ingrese el administrador
+	
 				}
 			}
 		})
