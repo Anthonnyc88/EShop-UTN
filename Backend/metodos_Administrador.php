@@ -29,4 +29,9 @@ function Cantidad_Clientes(){
         $info = $info2->fetch();
         echo $productos = $info;*/
         }
+        function Cronjob(){
+           
+    }
+       
+
 ?>

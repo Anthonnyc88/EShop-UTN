@@ -8,7 +8,7 @@ if(isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Tienda </title>
+		<title>Tienda el Garrotazo</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -18,10 +18,6 @@ if(isset($_SESSION["uid"])){
 				#search{width:80%;}
 				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
 			}
-			p {
-         background-color: hsl(153, 80%, 40%);
-}
-			
 		</style>
 	</head>
 <body>
@@ -57,7 +53,7 @@ if(isset($_SESSION["uid"])){
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Loguearse</a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Registrarse</a>
 					<ul class="dropdown-menu">
 						<div style="width:300px;">
 							<div class="panel panel-primary">
