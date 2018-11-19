@@ -4,17 +4,17 @@ require "../Backend/Conexion.php";
 // Consulta de la Cantidad de Clientes Registrados
 function Cantidad_Clientes(){
     $conexion = conexion();
-    $sql = "SELECT count(*) AS usu FROM personas WHERE usu='cliente';";
+    $sql = "SELECT count(*) AS user FROM user_info WHERE user='cliente';";
     $info2 = $conexion->prepare($sql); 
     $info2->execute();
     $info = $info2->fetch();
-    echo $usuarios = $info["usu"];
+    echo $usuarios = $info["user"];
 }
 
     //Cantidad de productos vendidos    
     function cantidad_Productos(){
         $conexion = conexion();
-        $sql =  "SELECT count(*) AS id FROM orden";
+        $sql =  "SELECT count(*) AS id FROM cart";
         $info2 = $conexion->prepare($sql); 
         $info2->execute();
         $info = $info2->fetch();

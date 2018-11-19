@@ -13,6 +13,7 @@ $address2 = $_POST['address2'];
 $name = "/^[A-Z][a-zA-Z ]+$/";
 $emailValidation = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$/";
 $number = "/^[0-9]+$/";
+$cliente="cliente";
 
 if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empty($repassword) ||
 	empty($mobile) || empty($address1) || empty($address2)){
@@ -93,12 +94,13 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	} else {
+		
 		$password = md5($password);
 		$sql = "INSERT INTO `user_info` 
 		(`user_id`, `first_name`, `last_name`, `email`, 
-		`password`, `mobile`, `address1`, `address2`) 
+		`password`, `mobile`, `address1`, `address2`,`user`) 
 		VALUES (NULL, '$f_name', '$l_name', '$email', 
-		'$password', '$mobile', '$address1', '$address2')";
+		'$password', '$mobile', '$address1', '$address2','$cliente')";
 		$run_query = mysqli_query($con,$sql);
 		if($run_query){
 			echo "
