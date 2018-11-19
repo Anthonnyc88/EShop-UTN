@@ -18,6 +18,10 @@ if(isset($_SESSION["uid"])){
 				#search{width:80%;}
 				#search_btn{width:30%;float:right;margin-top:-32px;margin-right:10px;}
 			}
+			p {
+         background-color: hsl(153, 80%, 40%);
+}
+			
 		</style>
 	</head>
 <body>

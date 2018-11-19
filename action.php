@@ -1,8 +1,9 @@
 <?php
 session_start();
+
 include "db.php";
 if(isset($_POST["category"])){
-	$category_query = "SELECT * FROM categories";
+	$category_query = "SELECT * FROM tbl_categoria";
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
@@ -10,10 +11,11 @@ if(isset($_POST["category"])){
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
-			$cid = $row["cat_id"];
-			$cat_name = $row["cat_title"];
+			$cat_name = $row["nombre"];
+			$cid = $row["id_categoria"];
+			$id= $row['id'];
 			echo "
-					<li><a href='#' class='category' cid='$cid'>$cat_name</a></li>
+					<li><a href='#' class='category' cid='$id'>$cat_name</a></li>
 			";
 		}
 		echo "</div>";
@@ -21,7 +23,7 @@ if(isset($_POST["category"])){
 }
 
 if(isset($_POST["page"])){
-	$sql = "SELECT * FROM products";
+	$sql = "SELECT * FROM tbl_productos";
 	$run_query = mysqli_query($con,$sql);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
@@ -39,23 +41,27 @@ if(isset($_POST["getProduct"])){
 	}else{
 		$start = 0;
 	}
-	$product_query = "SELECT * FROM products LIMIT $start,$limit";
+	$product_query = "SELECT * FROM tbl_productos LIMIT $start,$limit";
 	$run_query = mysqli_query($con,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
-			$pro_id    = $row['product_id'];
-			$pro_cat   = $row['product_cat'];
-			$pro_brand = $row['product_brand'];
-			$pro_title = $row['product_title'];
-			$pro_price = $row['product_price'];
-			$pro_image = $row['product_image'];
+			$pro_clave    = $row['sku'];
+			$pro_nombre   = $row['nombre'];
+			$pro_descripcion = $row['descripcion'];
+			$pro_image = $row['imagen'];
+			$pro_stock = $row['stock'];
+			$pro_price = $row['precio'];
+			$pro_id= $row['id'];
+			$pro_fkcategoria= $row['fk_categoria'];
+		
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
+								<div class='panel-heading'>$pro_nombre</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
+								
 								<div class='panel-heading'>$.$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Añadir al carrito</button>
 								</div>
@@ -67,8 +73,8 @@ if(isset($_POST["getProduct"])){
 }
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
-		$id = $_POST["cat_id"];
-		$sql = "SELECT * FROM products WHERE product_cat = '$id'";
+		$id = $_POST["id_categoria"];
+		$sql = "SELECT * FROM tbl_productos WHERE fk_categoria = '$id'";
 	}else if(isset($_POST["selectBrand"])){
 		$id = $_POST["brand_id"];
 		$sql = "SELECT * FROM products WHERE product_brand = '$id'";
@@ -79,16 +85,18 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 	
 	$run_query = mysqli_query($con,$sql);
 	while($row=mysqli_fetch_array($run_query)){
-			$pro_id    = $row['product_id'];
-			$pro_cat   = $row['product_cat'];
-			$pro_brand = $row['product_brand'];
-			$pro_title = $row['product_title'];
-			$pro_price = $row['product_price'];
-			$pro_image = $row['product_image'];
+		$pro_clave    = $row['sku'];
+		$pro_nombre   = $row['nombre'];
+		$pro_descripcion = $row['descripcion'];
+		$pro_image = $row['imagen'];
+		$pro_stock = $row['stock'];
+		$pro_price = $row['precio'];
+		$pro_id= $row['id'];
+	
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
+								<div class='panel-heading'>$pro_nombre</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
@@ -117,17 +125,20 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				</div>
 			";//not in video
 		} else {
-			$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
+			$sql = "SELECT * FROM tbl_productos WHERE id = '$p_id'";
 			$run_query = mysqli_query($con,$sql);
 			$row = mysqli_fetch_array($run_query);
-				$id = $row["product_id"];
-				$pro_name = $row["product_title"];
-				$pro_image = $row["product_image"];
-				$pro_price = $row["product_price"];
+				//$id = $row["product_id"];
+				$pro_descripcion = $row['descripcion'];
+			    $pro_id= $row['id'];
+			    $pro_image = $row['imagen'];
+				$pro_price = $row['precio'];
+				$pro_stock = $row['stock'];
+			
 			$sql = "INSERT INTO `cart` 
 			(`id`, `p_id`, `ip_add`, `user_id`, `product_title`,
 			`product_image`, `qty`, `price`, `total_amt`)
-			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name', 
+			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_descripcion', 
 			'$pro_image', '1', '$pro_price', '$pro_price')";
 			if(mysqli_query($con,$sql)){
 				echo "
