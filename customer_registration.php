@@ -86,10 +86,13 @@
 						</div>
 						<p><br/></p>
 						<div class="row">
+						   
 							<div class="col-md-12">
-								<input style="float:right;" value="Sign Up" type="button" id="signup_button" name="signup_button"  class="btn btn-success btn-lg">
+								<input style="float:right;" value="Registrar" type="button" id="signup_button" name="signup_button"  class="btn btn-success btn-lg">
 							</div>
+							
 						</div>
+						
 						
 					</div>
 					</form>
