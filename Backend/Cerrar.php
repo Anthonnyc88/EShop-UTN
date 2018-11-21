@@ -1,5 +1,5 @@
 <?php session_start();
     session_destroy();
     $_SESSION = array();
-    header("Location: ../Vista/login.php");
+    header("Location: ../index.php");
 ?>

@@ -28,7 +28,7 @@ require "../Backend/metodos_Administrador.php";
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
-                    <li class="selected"><a href="Login.php"><i class="fa fa-bullseye"></i>Cerrar Sesion</a></li>
+                    <li class="selected"><a href="../Backend/Cerrar.php"><i class="fa fa-bullseye"></i>Cerrar Sesion</a></li>
                     <li><a href=""><i class="fa fa-tasks"></i>Clientes</a></li>
                     <ul class="dropdown-menu">
                         
@@ -56,10 +56,10 @@ require "../Backend/metodos_Administrador.php";
             </div>
             <div class="row">
                 <div class="col-md-8">
+                <center>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Ser talentoso te abre muchas puertas,
-                            ser agradecido te las matiene abiertas.</h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>Bienvenido Administrador</h3>
                         </div>
                         <section class="feed-item">
                                 <div class="icon pull-left">

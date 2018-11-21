@@ -25,9 +25,9 @@ function Cantidad_Clientes(){
         $conexion = conexion();
         $sql = "SELECT SUM('p.precio') AS total FROM ventas AS v INNER JOIN productos AS p ON p.id_producto = v.id_producto;";
         $info2 = $conexion->prepare($sql); 
-        /*$info2->execute();
-        $info = $info2->fetch();
-        echo $productos = $info;*/
+        //$info2->execute();
+        //$info = $info2->fetch();
+       // echo $productos = $info;
         }
         function Cronjob(){
            
