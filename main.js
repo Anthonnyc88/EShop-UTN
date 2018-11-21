@@ -152,6 +152,8 @@ $(document).ready(function(){
 		var total = qty * price;
 		$("#total-"+pid).val(total);
 	})
+
+	//Funcion que elimina el producto del carrito de compras
 	$("body").delegate(".remove","click",function(event){
 		event.preventDefault();
 		var pid = $(this).attr("remove_id");
@@ -165,6 +167,9 @@ $(document).ready(function(){
 			}
 		})
 	})
+
+
+	//Funcion que modifica la cantidad de producto comprado del carrito
 	$("body").delegate(".update","click",function(event){
 		event.preventDefault();
 		var pid = $(this).attr("update_id");
@@ -182,6 +187,8 @@ $(document).ready(function(){
 		})
 	})
 	page();
+
+	//Paginacion de la pagina segun la cantidad de articulos agregados por el administrador
 	function page(){
 		$.ajax({
 			url	:	"action.php",

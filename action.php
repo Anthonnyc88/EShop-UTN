@@ -79,6 +79,7 @@ if(isset($_POST["getProduct"])){
 
 //Selecciona desde la opcion de categorias el id de la misma y lo enlaza al id del producto
 //Relacionada a esa categoria y muestra el producto segun seleccionado
+//Con su informacion en el panel
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["id_categoria"];
@@ -110,7 +111,8 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			";
 		}
 	}
-									
+	//Agrega el producto al carrito de compras
+	//Con la informacion consultada 	
 	if(isset($_POST["addToProduct"])){
 		
 		if(isset($_SESSION["uid"])){
@@ -136,7 +138,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			    $pro_image = $row['imagen'];
 				$pro_price = $row['precio'];
 				$pro_stock = $row['stock'];
-			
+			//Agrega a el carrito
 			$sql = "INSERT INTO `cart` 
 			(`id`, `p_id`, `ip_add`, `user_id`, `product_title`,
 			`product_image`, `qty`, `price`, `total_amt`)
